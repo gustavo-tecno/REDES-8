@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Criptografia de Dados</h1>
+    <form action="/encrypt" method="POST" class="mt-3">
+        <div class="form-group">
+            <label for="data_to_encrypt">Dados para criptografar:</label>
+            <input type="text" class="form-control" id="data_to_encrypt" name="data_to_encrypt" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Criptografar</button>
+    </form>
+
+    {% if encrypted_data %}
+    <div class="mt-3">
+        <h2>Dados Criptografados:</h2>
+        <p>{{ encrypted_data }}</p>
+        <h3>Chave:</h3>
+        <p>{{ key }}</p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

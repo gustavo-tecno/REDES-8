@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Command Simulator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Network Command Simulator</h1>
+        <form action="{{ url_for('execute_command') }}" method="POST">
+            <label for="command">Enter a Network Command:</label><br>
+            <input type="text" id="command" name="command" required><br><br>
+            <button type="submit">Execute</button>
+        </form>
+        {% if command %}
+        <h2>Command Executed:</h2>
+        <p><strong>{{ command }}</strong></p>
+        {% endif %}
+        {% if result %}
+        <h2>Command Output:</h2>
+        <pre>{{ result }}</pre>
+        {% endif %}
+        {% if error %}
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

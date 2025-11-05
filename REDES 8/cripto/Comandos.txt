@@ -1,0 +1,9 @@
+pip install Flask cryptography
+
+python app.py
+
+Abra o navegador e vá para http://127.0.0.1:5000/ para a página de criptografia.
+Para a página de descriptografia, vá para http://127.0.0.1:5000/decrypt.
+
+Essa aplicação ilustra como a camada de apresentação pode lidar com a criptografia e descriptografia de dados antes de transmiti-los para outra camada 
+ou recebê-los de outra camada e prepará-los para uso em uma aplicação.
